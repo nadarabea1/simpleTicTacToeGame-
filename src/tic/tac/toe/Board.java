@@ -4,12 +4,12 @@ public class Board {
 
     private final int ROWS;
     private final int COLNS;
-    private Shapes[][] game;
+    private Squares[][] game;
 
     public Board(int rows, int colns) {
         this.ROWS = rows;
         this.COLNS = colns;
-        game = new Shapes[rows][colns];
+        game = new Squares[rows][colns];
     }
 
     public int getROWS() {
@@ -33,20 +33,20 @@ public class Board {
 
     }
 
-    public boolean play(String name, int row, int coln) {
+    public boolean play(char name, int row, int coln) {
         boolean retval = false;
         if (isFree(row, coln)) {
-            game[row][coln] = new Shapes(name, row, coln);
+            game[row][coln] = new Squares(name, row, coln);
         }
         return retval;
     }
 
-    public boolean autoPlay(String name) {
+    public boolean autoPlay(char name) {
         boolean retval = false;
         for (int rows = 0; rows < ROWS; rows++) {
             for (int colns = 0; colns < COLNS; colns++) {
                 if (isFree(rows, colns)) {
-                    game[rows][colns] = new Shapes(name, rows, colns);
+                    game[rows][colns] = new Squares(name, rows, colns);
                     break;
                 }
             }
@@ -67,6 +67,16 @@ public class Board {
             System.out.println();
 
         }
+    }
+    
+    public boolean isSpaceAvaiable(){
+        boolean retval =false;
+        for(int rows=0; rows<ROWS; rows++){
+            for(int colns=0; colns<COLNS; colns++){
+                if(game[rows][colns]==null)return true;
+            }
+        }
+        return retval;
     }
 
 }

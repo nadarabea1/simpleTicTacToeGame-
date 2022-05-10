@@ -1,11 +1,11 @@
 
 package tic.tac.toe;
 
-public class Shapes extends Player{
+public class Squares extends Player{
     private int row;
     private int coln;
     
-    public Shapes(String name, int row, int coln){
+    public Squares(char name, int row, int coln){
         super(name);
         this.row=row;
         this.coln=coln;

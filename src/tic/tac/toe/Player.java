@@ -1,12 +1,12 @@
 package tic.tac.toe;
 
 public class Player {
-    private final String NAME;
+    private final char NAME;
     
-    public Player(String name){
+    public Player(char name){
         this.NAME=name;
     }
-    public String getName(){
+    public char getName(){
         return this.NAME;
     }
 }
