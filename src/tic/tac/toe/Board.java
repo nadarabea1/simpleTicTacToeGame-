@@ -41,7 +41,18 @@ public class Board {
         return retval;
     }
 
-    
+    public boolean autoPlay(String name) {
+        boolean retval = false;
+        for (int rows = 0; rows < ROWS; rows++) {
+            for (int colns = 0; colns < COLNS; colns++) {
+                if (isFree(rows, colns)) {
+                    game[rows][colns] = new Shapes(name, rows, colns);
+                    break;
+                }
+            }
+        }
+        return retval;
+    }
 
     public void print() {
         for (int rows = 0; rows < ROWS; rows++) {
