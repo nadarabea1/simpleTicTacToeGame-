@@ -5,8 +5,8 @@ public class Squares extends Player{
     private int row;
     private int coln;
     
-    public Squares( int row, int coln){
-        super();
+    public Squares(String name, int row, int coln){
+        super(name);
         this.row=row;
         this.coln=coln;
     }

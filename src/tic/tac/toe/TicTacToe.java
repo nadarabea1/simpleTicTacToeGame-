@@ -149,7 +149,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
         int row = board.getROWS(count);
         int col = board.getCOLNS(count);
         String turn =Turn(count);
-       while(board.isFree(row, col) && !board.haveWinner()){
+       if(!board.haveWinner()){
            if (event.getSource()== button1) {
                     button1.setText(turn);
                     board.play(turn, row, col);
@@ -183,6 +183,7 @@ public class TicTacToe extends Application implements EventHandler<ActionEvent> 
         if(board.haveWinner()){
             Thread thread =new Thread();
             WinnerThread winner= new WinnerThread(turn);
+            winner.start();
         }
        }
         
